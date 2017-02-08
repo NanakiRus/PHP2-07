@@ -1,11 +1,8 @@
 <?php
 
-namespace App\Controller;
+namespace App;
 
-
-use App\AdminDataTable;
 use App\Models\Article;
-use App\View;
 
 class AdminTable
     extends AdminDataTable
