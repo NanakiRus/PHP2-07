@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
+use App\AdminTable;
 use App\Controller;
-use App\Exception\ExceptionMulti;
 use App\Models\Article;
 use App\Exception\Exception404;
 
@@ -15,6 +15,30 @@ class Admin
     {
         $this->view->news = Article::findAll();
         $this->view->view(__DIR__ . '/../../template/admin/template.php');
+    }
+
+    protected function actionTable()
+    {
+        $data = Article::findEach();
+        foreach ($data as $value) {
+            $arrData[] = $value;
+        }
+        $funcArr = [
+            function (Article $title) {
+                return $title->title;
+            },
+            function (Article $text) {
+                return $text->text;
+            },
+            function (Article $id) {
+                return $id->id;
+            },
+            function (Article $author_id) {
+                return $author_id->author_id;
+            },
+        ];
+        $table = new AdminTable($arrData, $funcArr);
+        $table->tableRender();
     }
 
     protected function actionOne()

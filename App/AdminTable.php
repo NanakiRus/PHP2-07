@@ -16,11 +16,10 @@ class AdminTable
         $this->view = new View();
     }
 
-    protected function tableRender()
+    public function tableRender()
     {
-        $this->view->table = Article::findEach();
-        echo $this->view->render(__DIR__ . '/../../template/admin/table.php');
-
+        var_dump($this->data);
+        echo $this->view->render(__DIR__ . '/../template/admin/table.php');
     }
 
 }

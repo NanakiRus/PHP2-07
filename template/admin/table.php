@@ -11,9 +11,7 @@
 <table>
     <tr>
         <td>
-            <?php foreach ($table as $value) : ?>
-            <?php var_dump($value); ?>
-            <?php endforeach; ?>
+            <?php var_dump($this->data); ?>
         </td>
     </tr>
 </table>
