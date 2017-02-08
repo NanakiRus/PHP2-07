@@ -2,8 +2,6 @@
 
 namespace App;
 
-use App\Models\Article;
-
 class AdminTable
     extends AdminDataTable
 {

@@ -9,12 +9,15 @@
 </head>
 <body>
 <table>
+    <?php var_dump($arrData); foreach ($arrData as $value) : ?>
     <tr>
+        <?php foreach ($arrFunc as $func) : ?>
         <td>
-            <?php var_dump($this->data); ?>
+                    <?php echo $func($value); ?>
         </td>
+        <?php endforeach; ?>
     </tr>
+    <?php endforeach; ?>
 </table>
-
 </body>
 </html>

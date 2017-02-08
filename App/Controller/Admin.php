@@ -24,17 +24,17 @@ class Admin
             $arrData[] = $value;
         }
         $funcArr = [
-            function (Article $title) {
-                return $title->title;
+            function (Article $article) {
+                return $article->title;
             },
-            function (Article $text) {
-                return $text->text;
+            function (Article $article) {
+                return $article->text;
             },
-            function (Article $id) {
-                return $id->id;
+            function (Article $article) {
+                return $article->id;
             },
-            function (Article $author_id) {
-                return $author_id->author_id;
+            function (Article $article) {
+                return $article->author_id;
             },
         ];
         $table = new AdminTable($arrData, $funcArr);
