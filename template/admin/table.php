@@ -9,14 +9,14 @@
 </head>
 <body>
 <table>
-    <?php var_dump($arrData); foreach ($arrData as $value) : ?>
-    <tr>
-        <?php foreach ($arrFunc as $func) : ?>
-        <td>
+    <?php foreach ($arrData as $value) : ?>
+        <tr>
+            <?php foreach ($arrFunc as $func) : ?>
+                <td>
                     <?php echo $func($value); ?>
-        </td>
-        <?php endforeach; ?>
-    </tr>
+                </td>
+            <?php endforeach; ?>
+        </tr>
     <?php endforeach; ?>
 </table>
 </body>
