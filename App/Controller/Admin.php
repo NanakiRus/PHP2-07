@@ -38,7 +38,7 @@ class Admin
             },
         ];
         $table = new AdminTable($arrData, $funcArr);
-        $table->tableRender();
+        echo $table->tableRender();
     }
 
     protected function actionOne()

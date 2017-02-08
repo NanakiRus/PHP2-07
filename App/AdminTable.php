@@ -18,8 +18,9 @@ class AdminTable
 
     public function tableRender()
     {
-        var_dump($this->data);
-        echo $this->view->render(__DIR__ . '/../template/admin/table.php');
+        $this->view->arrData = $this->data;
+        $this->view->arrFunc = $this->func;
+        return $this->view->render(__DIR__ . '/../template/admin/table.php');
     }
 
 }
