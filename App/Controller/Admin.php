@@ -19,10 +19,7 @@ class Admin
 
     protected function actionTable()
     {
-        $data = Article::findEach();
-        foreach ($data as $value) {
-            $arrData[] = $value;
-        }
+        $data[] = Article::findEach();
         $funcArr = [
             function (Article $article) {
                 return $article->title;
@@ -41,7 +38,7 @@ class Admin
                 }
             },
         ];
-        $table = new AdminTable($arrData, $funcArr);
+        $table = new AdminTable($data, $funcArr);
         echo $table->view->render(__DIR__ . '/../../template/admin/table.php');
 
     }

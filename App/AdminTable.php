@@ -12,7 +12,7 @@ class AdminTable
         parent::__construct($data, $func);
 
         $this->view = new View();
-        $this->view->arrData = $this->data;
+        $this->view->arrData = $this->data[0];
         $this->view->arrFunc = $this->func;
     }
 
