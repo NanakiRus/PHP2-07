@@ -38,7 +38,8 @@ class Admin
             },
         ];
         $table = new AdminTable($arrData, $funcArr);
-        echo $table->tableRender();
+        $table->view->render(__DIR__ . '/../../template/admin/table.php');
+
     }
 
     protected function actionOne()
