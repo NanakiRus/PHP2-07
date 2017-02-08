@@ -16,7 +16,7 @@ class AdminTable
         $this->view = new View();
     }
 
-    protected function actionRender()
+    protected function tableRender()
     {
         $this->view->table = Article::findEach();
         echo $this->view->render(__DIR__ . '/../../template/admin/table.php');
