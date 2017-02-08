@@ -34,7 +34,11 @@ class Admin
                 return $article->id;
             },
             function (Article $article) {
-                return $article->author_id;
+                if (!empty($author = $article->author)) {
+                    return $author->firstname . ' ' . $author->lastname;
+                } else {
+                    return 'Автор не указан';
+                }
             },
         ];
         $table = new AdminTable($arrData, $funcArr);
